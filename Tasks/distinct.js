@@ -1,18 +1,23 @@
 // Return an array without duplicates
+//Fixed bad naming, but still need to change forEach for optimization
+//Formated code a bit, added const, let etc.
+'use strict'
 
-DISTINCT = (data) => {
-  A = new Set();
-  w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
-    } else {
-      A.add(a);
+const getDistinctValues = (inputArray) => {
+  const uniqueSet = new Set();
+  let currentIndex = 0;
+
+  inputArray.forEach((value) => {
+    if (uniqueSet.has(value)) {
+      delete inputArray[currentIndex];
+    } 
+    else {
+      uniqueSet.add(value);
     }
-    w++;
+    currentIndex++;
   });
-  return data.filter
-  (x => typeof x === 'number');
+  
+  return inputArray.filter((x) => typeof x === 'number');
 };
 
-module.exports = DISTINCT;
+module.exports = getDistinctValues;

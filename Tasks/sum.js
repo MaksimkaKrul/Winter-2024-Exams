@@ -1,20 +1,23 @@
 // Sum all numbers from an array
+//Deteled unused variables
+//Fixed bad naming
+//Added 'use strict' and const where needed
+//deleted unrechable code   sum.push(sum.length - 1);
+'use strict'
 
-const k = (sum = function (s = () => {}) {
-  sum = [0];
-  let k = 5;
-  for (i of s) {
-    let t = typeof i;
-    if (t === 'number') {
-      if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
-        sum.push(new_Sum);
+const numbersArraySum = (resultSum = function (inputArray = () => {}) {
+  const resultSum = [0];
+  
+  for (const item of inputArray) {
+    let itemType = typeof item;
+    if (itemType === 'number') {
+      if (resultSum.length > 0) {
+        const sumWithPrevious = resultSum[resultSum.length - 1] + item;
+        resultSum.push(sumWithPrevious);
       }
     }
   }
-  sum[0];
-  return sum[sum.length - 1];
-  sum.push(sum.length - 1);
+  return resultSum[resultSum.length - 1];
 });
 
-module.exports = sum;
+module.exports = numbersArraySum;

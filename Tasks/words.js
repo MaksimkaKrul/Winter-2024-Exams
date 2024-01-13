@@ -1,11 +1,13 @@
 // Count words in a string
-
-Words = function (s) {
-  number_of_words_in_s = 0;
-  flag = false;
-  for (c of s) {
+//For beginning I fixed bad naming and deleted unnececary flag
+//The flag thing is still here and will fix in next commit
+'use strict'
+const countWordsInArray = (inputString) => {
+  let numberOfWords = 0;
+  let flag = false;
+  for (const word of inputString) {
     if (!flag) {
-      if (c === ' ') {
+      if (word === ' ') {
         if (flag === true) {
           flag = false;
         } else {
@@ -17,10 +19,10 @@ Words = function (s) {
         } else {
           flag = true;
         }
-        number_of_words_in_s++;
+        numberOfWords++;
       }
     } else {
-      if (c === ' ') {
+      if (word === ' ') {
         if (flag === true) {
           flag = false;
         } else {
@@ -35,7 +37,7 @@ Words = function (s) {
       }
     }
   }
-  return number_of_words_in_s;
+  return numberOfWords;
 };
 
-module.exports = Words;
+module.exports = countWordsInArray;

@@ -1,13 +1,18 @@
 // Copy all listed keys from dictionary
+//Fixed bad naming
+//Shorted if statement
+//deleted variables that we don't use
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
-  T.forEach((_) => {
-    () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
-  }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+'use strict'
+
+const copyKeys = (inputDictionary, ...keyWeWant) => {
+  const keysList = Object.keys(inputDictionary);
+
+  keysList.forEach((_) => {
+    if (!keyWeWant.includes(_)) delete inputDictionary[_]
+  });
+
+  return inputDictionary;
 };
 
-module.exports = tAKe;
+module.exports = copyKeys;
