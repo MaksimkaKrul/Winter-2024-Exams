@@ -19,7 +19,7 @@ const getMonthIndex = (monthName) => {
   let lowerMonthName = monthName.toLowerCase();
 
   for (const [index, month] of monthList.entries()) {
-    if (lowerMonthName.includes(month) return index + 1;
+    if (lowerMonthName.includes(month)) return index + 1;
   }
 
   return -1;
