@@ -12,7 +12,7 @@ const getDayIndex = (dayName) => {
   let dayNameList = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];  
 
   for (const [index, day] of dayNameList.entries()) {
-    if (dayName.indexOf(day.toLowerCase()) == 0) return index + 1;
+    if (dayName.indexOf(day.toLowerCase()) === 0) return index + 1;
   }
   return -1;
 };
