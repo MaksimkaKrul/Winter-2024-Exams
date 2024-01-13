@@ -4,28 +4,25 @@
 //deleted unnecessary {} in for loop
 //Still thinking about Object.assign and if else things in code
 //Formating code a bit for nice looking
+//Made a defaultResult for not magic string
+//Instead of if else statements now we have just one if
+//Deleted Object.assign, because looks like we don't use it anywhere
 
-'use strict'
 
-const findLongestString = function (string = [],) {
+'use strict';
+
+const findLongestString = (strings = []) => {
+  const defaultResult = ['Not found'];
   let maxLength = -1;
-  let longestString = ['Not found'];
-  for (let str of string) {
+  let longestString = defaultResult;
+
+  for (const str of strings) {
     if (str.length > maxLength) {
       maxLength = str.length;
-    } 
-    else {
-      str = 0;
-    }
-
-    if (str.length >= maxLength) {
       longestString = str;
-    } 
-    else {
-      str = -1;
     }
   }
-  Object.assign(string, { length: longestString.length });
+
   return longestString;
 };
 
