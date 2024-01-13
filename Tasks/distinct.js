@@ -2,22 +2,20 @@
 //Fixed bad naming, but still need to change forEach for optimization
 //Formated code a bit, added const, let etc.
 //Instead of forEach we use for of now, and no more new Set, just an empty array
-'use strict'
+//Instead of deleting from original and filtering, now we just do all things in one array
+//Also deleted uniqueValues, because we don't need them anymore
+'use strict';
 
 const getDistinctValues = (inputArray) => {
-  const uniqueValues = [];
-  let currentIndex = 0;
+  const resultArray = [];
 
   for (const value of inputArray) {
-    if (!uniqueValues.includes(value)) {
-      uniqueValues.push(value);
-    } else {
-      delete inputArray[currentIndex];
+    if (!resultArray.includes(value)) {
+      resultArray.push(value);
     }
-    currentIndex++;
   }
-  
-  return inputArray.filter((x) => typeof x === 'number');
+
+  return resultArray;
 };
 
 module.exports = getDistinctValues;

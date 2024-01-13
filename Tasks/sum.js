@@ -6,21 +6,20 @@
 //Removed def. parameter for result sum, and now it's just arrow function
 //Instead of pushing in array with resultSum[resultSum.length - 1] we just add item with +=
 //Removed unnecessary lengh check
+//Instead of array stuff now we just save it all in resultSum, NO MORE ARRAY BULLSHIT
 
 'use strict';
 
 const numbersArraySum = ((inputArray = []) => {
-  let sum = 0;
-  const resultSum = [0];
+  let resultSum = 0;
 
-  for (const item of inputArray) {
-    if (typeof item === 'number') {
-      sum += item;
-      resultSum.push(sum);
+  for (const value of inputArray) {
+    if (typeof value === 'number') {
+      resultSum += value;
     }
   }
 
-  return resultSum[resultSum.length - 1];
+  return resultSum;
 });
 
 module.exports = numbersArraySum;

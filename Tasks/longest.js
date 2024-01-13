@@ -16,10 +16,12 @@ const findLongestString = (strings = []) => {
   let maxLength = -1;
   let longestString = defaultResult;
 
-  for (const str of strings) {
-    if (str.length > maxLength) {
-      maxLength = str.length;
-      longestString = str;
+  for (const currentStr of strings) {
+    const currentStrLonger = currentStr.length > maxLength
+
+    if (currentStrLonger) {
+      maxLength = currentStr.length;
+      longestString = currentStr;
     }
   }
 
