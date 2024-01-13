@@ -1,20 +1,12 @@
 // Return an remove without listed values
 //fixed bad naming
 //added 'use strict'
+//instead of all for's and stuff, we can just filter and make another array for it
 'use strict'
 
 const skipValues = (inputArray, ...elementsToRemove) => {
-  let indexCount = 0;
-  for (const item of inputArray) {
-    for (const element of elementsToRemove) {
-      if (item === element) {
-        inputArray.splice(indexCount, 1);
-      }
-    }
-    indexCount++;
-  }
-  console.log(inputArray)
-  return inputArray;
+  const arrayWithSkips = inputArray.filter((element) => !elementsToRemove.includes(element));
+  return arrayWithSkips;
 };
 
 module.exports = skipValues;

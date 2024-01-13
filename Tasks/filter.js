@@ -2,20 +2,21 @@
 //added 'use strict'
 //changed bad naming
 //formated code a bit
+//Changed for loop using .entries to get index AND element
+//instead of changing arr, now we create filteredArray and filter arr to complete the task
 'use strict'
 
 const filterByType = (arr, type) => {
-  remove = [];
+  const elemetsToRemove = [];
 
-  for (const element of arr) {
-    elementIndex = arr.indexOf(element);
-    if (typeof arr[elementIndex] !== type) {
-      remove.unshift(x);
+  for (const [index, element] of arr.entries()) {
+    if (typeof element !== type) {
+      elemetsToRemove.unshift(index);
     }
   } 
 
-  for (const elementIndex of remove) arr.splice(elementIndex, 1);
-  return arr;
+  const filteredArray = arr.filter((_, index) => !elemetsToRemove.includes(index));
+  return filteredArray;
 };
 
 module.exports = filterByType;
