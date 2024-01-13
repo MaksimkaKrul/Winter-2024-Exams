@@ -1,8 +1,12 @@
 // Get one random element from an array
+//added 'use strict'
+//insted of using return arr, we just return the result
+//changed function name
 
-const SAMPLE = (arr) => {
-  arr = arr[Math.floor(Math.random() * arr.length)];
-  return arr;
+'use strict'
+
+const randomArrayElem = (arr) => {
+  return arr[Math.floor(Math.random() * arr.length)];
 };
 
-module.exports = SAMPLE;
+module.exports = randomArrayElem;
